@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search-section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-section input {
+  width: 100%;
+  max-width: 500px;
+}
+
+.results-section, .favorites-section {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.album-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.album-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.album-name {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.favorite-btn {
+  background-color: #3f51b5;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-top: 8px;
+  font-size: 0.875rem;
+}
+
+.favorite-btn:hover {
+  background-color: #283593;
+}
+
+.remove-btn {
+  background-color: #e53935;
+}
+
+.remove-btn:hover {
+  background-color: #b71c1c;
+}
